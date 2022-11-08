@@ -54,8 +54,12 @@
     - name: Look up Debian Jessie AMI
       ec2_ami_facts:
         owners: 379101102735
+        #owners: 136693071363
+        #owners: 903794441882
         filters:
-          name: "debian-jessie-amd64-hvm-*"
+          #name: "debian-jessie-amd64-hvm-*"
+          #name: "debian-11-amd64-20221020-1174*"
+          name: "debian*"
           architecture: "x86_64"
           hypervisor: "xen"
           "root-device-type": "ebs"
