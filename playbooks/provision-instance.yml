@@ -22,16 +22,13 @@
         content: "{{ key_pair.key.private_key }}"
         dest: "{{ key_pair_file }}"
         mode: 0600
-
+        
     - name: Find the default VPC
       ec2_vpc_net_facts:
-      region: "{{ ec2_region }}"
-      filters:
-        isDefault: "true"
+        region: "{{ ec2_region }}"
+        filters:
+          isDefault: "true"
       register: vpc_nets
-      tags:
-        - aws
-        - AWS
 
     - name: Find the default VPC subnet
       ec2_vpc_subnet_facts:
